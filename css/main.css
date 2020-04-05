@@ -1,20 +1,15 @@
-.navbar {
-    display: inline-flex;
-}
 .flexItem {
-    color: hotpink;
-    padding-top: 15px;
-    padding-left: 20px;
+    color: #000000;
+    padding: 15px 0;
 }
-a:link {
-    display: inline-flex;
+body {
+    margin: 0;
 }
-a:visited {
-    color: hotpink;
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3E8900;
 }
-a:hover {
-    color: green;
-}
-a:active {
-    color: yellow;
+a {
+    color: #000;
 }
