@@ -1,5 +1,5 @@
 .navbarItem {
-    padding: 3% 0;
+    padding: 2em;
 }
 .gradient {
     position: absolute;
@@ -28,6 +28,11 @@ a {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 300;
+}
+
+.navbarItem:hover {
+    background-color: #00000099;
+    cursor: pointer;
 }
 html {
     height: 100%;

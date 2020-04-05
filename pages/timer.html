@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <title>TimerBuddy</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/home.js"></script>
 </head>
-<STYLE>A {text-decoration: none;}</STYLE>
 <body>
     <div class="navbar"> 
         <div class="navbarItem"><a href="../index.html">Home</a></div>
@@ -11,4 +12,10 @@
         <div class="navbarItem"><a href="#">Login</a></div>
     </div>
 </body>
+<script>
+    window.addEventListener('load', function (event) {
+        console.log('Page loaded');
+        init("happyPhrase");
+    });
+</script>
 </html>
