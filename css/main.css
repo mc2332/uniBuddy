@@ -1,0 +1,19 @@
+.navbar {
+    display: inline-flex;
+}
+.flexItem {
+    color: hotpink;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+a:link {
+}
+a:visited {
+    color: hotpink;
+}
+a:hover {
+    color: green;
+}
+a:active {
+    color: yellow;
+}
