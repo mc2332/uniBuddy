@@ -55,3 +55,11 @@ html {
     backdrop-filter: blur(1px);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.countdownItemLabel {
+    display: flex;
+    justify-content: center;
+}
+.countdownItemValue {
+    display: flex;
+    justify-content: center;
+}
