@@ -45,3 +45,13 @@ html {
     color: rgba(255,255,255, 40%);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.countdown {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 5em;
+    margin: 15em;
+    background-color: #00000099;
+    backdrop-filter: blur(1px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

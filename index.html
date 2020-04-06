@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>UniBuddy</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/home.js"></script>
 </head>
+
 <body>
     <div class="gradient"></div>
-        <div class="navbar">
-            <div class="navbarItem"><a href="./index.html">Home</a></div>
-            <div class="navbarItem"><a href="./pages/timer.html">TimerBuddy</a></div>
-            <div class="navbarItem"><a href="#">Login</a></div>
+    <div class="navbar">
+        <div class="navbarItem"><a href="./index.html">Home</a></div>
+        <div class="navbarItem"><a href="./pages/timer.html">TimerBuddy</a></div>
+        <div class="navbarItem"><a href="#">Login</a></div>
+    </div>
+    <div class="countdown">
+        <div class="countdownItem" id="days">
+            <p class="countdownItemLabel">DAYS</p>
+            <p class="countdownItemValue">99</p>
         </div>
+        <div class="countdownItem" id="hours">
+            <p class="countdownItemLabel">HOURS</p>
+            <p class="countdownItemValue">99</p>
+        </div>
+        <div class="countdownItem" id="mins">
+            <p class="countdownItemLabel">MINUTES</p>
+            <p class="countdownItemValue">99</p>
+        </div>
+        <div class="countdownItem" id="secs">
+            <p class="countdownItemLabel">SECONDS</p>
+            <p class="countdownItemValue">99</p>
+        </div>
+    </div>
     <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>
 </body>
 
@@ -21,4 +41,5 @@
         init("happyPhrase");
     });
 </script>
+
 </html>
