@@ -5,6 +5,7 @@
     <title>UniBuddy</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/home.js"></script>
+    <script src="https://unpkg.com/moment"></script>
 </head>
 
 <body>
@@ -17,19 +18,19 @@
     <div class="countdown">
         <div class="countdownItem">
             <p class="countdownItemLabel">DAYS</p>
-            <p class="countdownItemValue" id="days">99</p>
+            <p class="countdownItemValue" id="days">0</p>
         </div>
         <div class="countdownItem">
             <p class="countdownItemLabel">HOURS</p>
-            <p class="countdownItemValue" id="hours">99</p>
+            <p class="countdownItemValue" id="hours">0</p>
         </div>
         <div class="countdownItem">
             <p class="countdownItemLabel">MINUTES</p>
-            <p class="countdownItemValue" id="mins">99</p>
+            <p class="countdownItemValue" id="mins">0</p>
         </div>
         <div class="countdownItem">
             <p class="countdownItemLabel">SECONDS</p>
-            <p class="countdownItemValue" id="secs">99</p>
+            <p class="countdownItemValue" id="secs">0</p>
         </div>
     </div>
     <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>
@@ -38,7 +39,7 @@
 <script>
     window.addEventListener('load', function (event) {
         console.log('Page loaded');
-        init("happyPhrase");
+        init("happyPhrase", moment);
     });
 </script>
 

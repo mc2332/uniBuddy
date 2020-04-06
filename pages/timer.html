@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/timer.js"></script>
     <script src="../js/home.js"></script>
+    <script src="https://unpkg.com/moment"></script>
 </head>
 
 <body>
@@ -34,6 +35,22 @@
         <div class="timerButtons">
             <div class="timerButton">Start Revision</div>
             <div class="timerButton">Start Break</div>
+        </div>
+    </div>
+    <div class="totals">
+        <div class="totalsItem" id="startTime">
+            <div class="totalsTitle" id="startTitle">You started working at:</div>
+            <div class="totalsValue" id="startValue">12:00</div>
+        </div>
+        <div class="totalsItem" id="revisionTotal">
+            <div class="totalsTitle" id="revisionTitle">Total Revision Time:</div>
+            <div class="totalsValue" id="revisionValue">00:00h</div>
+            <div class="totalsValue" id="revisionSessions">from a total of 5 sessions</div>
+        </div>
+        <div class="totalsItem" id="breakTotal">
+            <div class="totalsTitle" id="breakTitle">Total Break Time:</div>
+            <div class="totalsValue" id="breakValue">7h</div>
+            <div class="totalsValue" id="breakSessions">7</div>
         </div>
     </div>
     <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>

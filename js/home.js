@@ -24,7 +24,33 @@ function displayHappyPhrase(happyMessageId) {
     happyMessage.innerText=pickRandom(happyPhrases);
 }
 
-function init(happyMessageId) {
+function getCountdown(examStart) {
+    const now = moment();
+    const fromNow = moment.duration(examStart.diff(now));
+
+    const daysLeft = Math.floor(fromNow.asDays());
+
+    const hoursLeft = Math.floor(fromNow.subtract(daysLeft, "Days").asHours());
+    
+    const minutesLeft = Math.floor(fromNow.subtract(hoursLeft, "Hours").asMinutes());
+
+    const secondsLeft = Math.floor(fromNow.subtract(minutesLeft, "Minutes").asSeconds());
+    
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const mins = document.getElementById("mins");
+    const secs = document.getElementById("secs");
+    
+    days.innerText = daysLeft;
+    hours.innerText = hoursLeft;
+    mins.innerText = minutesLeft;
+    secs.innerText = secondsLeft;
+}
+
+function init(happyMessageId, moment) {
     displayHappyPhrase(happyMessageId);
     displayBackground();
+    const examStart = moment("20200511", "YYYYMMDD");
+    getCountdown(examStart);
 }
+
