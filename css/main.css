@@ -1,6 +1,6 @@
-.navbarItem {
+/*.navbarItem {
     padding: 2em;
-}
+}*/
 .gradient {
     position: absolute;
     height: 100%;
@@ -23,6 +23,8 @@ body {
     backdrop-filter: blur(1px);
 }
 a {
+    display:inline-block;
+    padding: 1.5em;
     font-size: 1.5em;
     text-decoration: none;
     color: white;
