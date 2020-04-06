@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <title>TimerBuddy</title>
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/timer.js"></script>
+    <script src="../js/home.js"></script>
 </head>
+
 <body>
+    <div class="gradient"></div>
     <div class="navbar"> 
         <div class="navbarItem"><a href="../index.html">Home</a></div>
         <div class="navbarItem"><a href="./timer.html">TimerBuddy</a></div>
         <div class="navbarItem"><a href="#">Login</a></div>
     </div>
+    <div class="timer">
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addHours">+</p>
+            <p class="timerItemValue" id="hours">99</p>
+            <p class="timerItemAdjust" id="minusHours">-</p>
+        </div>
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addMins">+</p>
+            <p class="timerItemValue" id="mins">99</p>
+            <p class="timerItemAdjust" id="minusMins">-</p>
+        </div>
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addSecs">+</p>
+            <p class="timerItemValue" id="secs">99</p>
+            <p class="timerItemAdjust" id="minusSecs">-</p>
+        </div>
+        <div class="timerButtons">
+            <div class="timerButton">Start Revision</div>
+            <div class="timerButton">Start Break</div>
+        </div>
+    </div>
+    <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>
 </body>
+
 <script>
     window.addEventListener('load', function (event) {
         console.log('Page loaded');
-        displayBackground();
+        displayBackgroundTimer();
+        displayHappyPhrase("happyPhrase");
     });
 </script>
 </html>
