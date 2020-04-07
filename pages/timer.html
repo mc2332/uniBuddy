@@ -12,25 +12,25 @@
 <body>
     <div class="gradient"></div>
     <div class="navbar"> 
-        <div class="navbarItem"><a href="../index.html">Home</a></div>
-        <div class="navbarItem"><a href="./timer.html">TimerBuddy</a></div>
-        <div class="navbarItem"><a href="#">Login</a></div>
+        <div class="navbarItem"><a href="../index.html" class="navbarLink">Home</a></div>
+        <div class="navbarItem"><a href="./timer.html" class="navbarLink">TimerBuddy</a></div>
+        <div class="navbarItem"><a href="#" class="navbarLink">Login</a></div>
     </div>
     <div class="timer">
         <div class="timerItem">
-            <p class="timerItemAdjust" id="addHours">+</p>
+            <p class="timerItemAdjust" id="addHours"><a class="adjust" href="#" onclick='addHours("hours")'>+</a></p>
             <p class="timerItemValue" id="hours">0</p>
-            <p class="timerItemAdjust" id="minusHours">-</p>
+            <p class="timerItemAdjust" id="minusHours" ><a class="adjust" href="#" onclick='minusHours("hours")'>-</a></p>
         </div>
         <div class="timerItem">
-            <p class="timerItemAdjust" id="addMins">+</p>
+            <p class="timerItemAdjust" id="addMins"><a class="adjust" href="#" onclick='addMins("mins", "hours")'>+</a></p>
             <p class="timerItemValue" id="mins">0</p>
-            <p class="timerItemAdjust" id="minusMins">-</p>
+            <p class="timerItemAdjust" id="minusMins"><a class="adjust" href="#" onclick='minusMins("mins", "hours")'>-</a></p>
         </div>
         <div class="timerItem">
-            <p class="timerItemAdjust" id="addSecs">+</p>
+            <p class="timerItemAdjust" id="addSecs"><a class="adjust" href="#" onclick='addSecs("secs","mins","hours")'>+</a></p>
             <p class="timerItemValue" id="secs">0</p>
-            <p class="timerItemAdjust" id="minusSecs">-</p>
+            <p class="timerItemAdjust" id="minusSecs"><a class="adjust" href="#" onclick='minusSecs("secs","mins","hours")'>-</a></p>
         </div>
         <div class="timerButtons">
             <div class="timerButton">Start Revision</div>
