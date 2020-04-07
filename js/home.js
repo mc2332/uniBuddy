@@ -47,7 +47,7 @@ function getCountdown(examStart) {
 function decreaseDays() {
     console.log("decrease days");
     const days = document.getElementById("days");
-    if (days === "0") {
+    if (days.innerText === "0") {
     } else {
         days.innerText = days.innerText - 1;
     }
@@ -56,7 +56,7 @@ function decreaseDays() {
 function decreseHours() {
     console.log("decrease hours");
     const hours = document.getElementById("hours");
-    if (hours === "0") {
+    if (hours.innerText === "0") {
         hours.innerText = "23"
         decreaseDays();
     } else {
@@ -67,7 +67,7 @@ function decreseHours() {
 function decreaseMins() {
     console.log("decrease mins")
     const mins = document.getElementById("mins");
-    if (mins === "0") {
+    if (mins.innerText === "0") {
         mins.innerText = "59"
         decreaseHours();
     } else {
