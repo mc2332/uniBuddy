@@ -25,16 +25,16 @@
         <div class="timerItem">
             <p class="timerItemAdjust" id="addMins"><a class="adjust" href="#" onclick='addMins("mins", "hours")'>+</a></p>
             <p class="timerItemValue" id="mins">0</p>
-            <p class="timerItemAdjust" id="minusMins"><a class="adjust" href="#" onclick='minusMins("mins", "hours")'>-</a></p>
+            <p class="timerItemAdjust" id="minusMins"><a class="adjust" href="#" onclick='minusMins("mins")'>-</a></p>
         </div>
         <div class="timerItem">
             <p class="timerItemAdjust" id="addSecs"><a class="adjust" href="#" onclick='addSecs("secs","mins","hours")'>+</a></p>
             <p class="timerItemValue" id="secs">0</p>
-            <p class="timerItemAdjust" id="minusSecs"><a class="adjust" href="#" onclick='minusSecs("secs","mins","hours")'>-</a></p>
+            <p class="timerItemAdjust" id="minusSecs"><a class="adjust" href="#" onclick='minusSecs("secs")'>-</a></p>
         </div>
         <div class="timerButtons">
-            <div class="timerButton">Start Revision</div>
-            <div class="timerButton">Start Break</div>
+            <div class="timerButton" onclick='decreaseTime("revision")'>Start Revision</div>
+            <div class="timerButton" onclick='decreaseTime("break")'>Start Break</div>
         </div>
     </div>
     <div class="totals">
