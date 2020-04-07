@@ -53,14 +53,14 @@ function decreaseDays() {
     }
 }
 
-function decreseHours() {
+function decreaseHours() {
     console.log("decrease hours");
     const hours = document.getElementById("hours");
     if (hours.innerText === "0") {
         hours.innerText = "23"
         decreaseDays();
     } else {
-        days.innerText = days.innerText - 1;
+        hours.innerText = hours.innerText - 1;
     }
 }
 
