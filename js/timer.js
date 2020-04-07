@@ -1,3 +1,10 @@
+let totalWorkTime;
+let totalBreakTime;
+
+let currentHours;
+let currentMinutes;
+let currentSeconds;
+
 function displayBackgroundTimer() {
     const randInt = Math.floor(Math.random() * backgroundCount);
     document.body.style.backgroundImage=`url("../assets/tree${randInt}.jpg")`;
@@ -86,6 +93,10 @@ function decreaseTime(type) {
     const mins = document.getElementById("mins");
     const hours = document.getElementById("hours");
 
+    currentHours = hours.innerText;
+    currentMinutes = mins.innerText;
+    currentSeconds = secs.innerText;
+
     if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
         console.log('all 0');
     } else {
@@ -97,6 +108,7 @@ function decreaseTime(type) {
             if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
                 console.log("Done!")
                 clearInterval(repeat);
+                addToTotals();
             } else {
                 if (secs.innerText === "0") {
                     secs.innerText = "59"
