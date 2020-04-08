@@ -92,6 +92,10 @@ function decreaseMinsTimer() {
     }
 }
 
+function hideAlert() {
+
+}
+
 function decreaseTime(type) {
     const secs = document.getElementById("secs"); 
     const mins = document.getElementById("mins");
@@ -100,6 +104,7 @@ function decreaseTime(type) {
     const sessionsSoFar = parseInt(document.getElementById("revisionSessions").innerText.substr(10,1));
     const alert = document.getElementById("alert");
     const closebtn = document.getElementById("closebtn");
+    const alertMessage = document.getElementById('alertMessage');
 
     if (sessionsSoFar == 0 && type=="revision") {
         updateStartTime(startTime,sessionsSoFar);
@@ -117,13 +122,13 @@ function decreaseTime(type) {
             console.log("decrease secs");
             const secs = document.getElementById("secs");
             if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
-                console.log("Done!")
+                console.log("Done!");
                 if (type === "revision") {
-                    alert.innerText = "Well done! Time for a break.";
+                    alertMessage.innerText = "Well done! Time for a break.";
                     alert.style.display = "unset";
                     closebtn.style.display = "unset";
                 } else {
-                    alert.innerText = "Time's up! Let's get back to work.";
+                    alertMessage.innerText = "Time's up! Let's get back to work.";
                     alert.style.display = "unset";
                     closebtn.style.display = "unset";
                 }
