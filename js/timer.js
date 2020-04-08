@@ -98,7 +98,7 @@ function decreaseTime(type) {
     const hours = document.getElementById("hours");
     const startTime = moment().format('LT');
     const sessionsSoFar = parseInt(document.getElementById("revisionSessions").innerText.substr(10,1));
-    console.log(sessionsSoFar);
+
     if (sessionsSoFar == 0 && type=="revision") {
         updateStartTime(startTime,sessionsSoFar);
     }
@@ -142,7 +142,7 @@ function addToTotals(type,sessionsSoFar) {
         totalBreakTimeMins = totalBreakTimeMins + parseInt(currentMinutes);
         totalBreakTimeSecs = totalBreakTimeSecs + parseInt(currentSeconds);
         document.getElementById("breakValue").innerText = `${totalBreakTimeHours}h:${totalBreakTimeMins}m:${totalBreakTimeSecs}s`;
-        const breakSessionsSoFar = parseInt(document.getElementById("revisionSessions").innerText.substr(10,1));
+        const breakSessionsSoFar = parseInt(document.getElementById("breakSessions").innerText.substr(10,1));
         document.getElementById("breakSessions").innerText = `Sessions: ${breakSessionsSoFar+1}`;
     }
 }
