@@ -1,9 +1,17 @@
-let totalWorkTime;
-let totalBreakTime;
+let totalWorkTimeHours = 0;
+let totalWorkTimeMins = 0;
+let totalWorkTimeSecs = 0;
+
+let totalBreakTimeHours = 0;
+let totalBreakTimeMins = 0;
+let totalBreakTimeSecs = 0;
 
 let currentHours;
 let currentMinutes;
 let currentSeconds;
+
+let startHour;
+let startMin;
 
 function displayBackgroundTimer() {
     const randInt = Math.floor(Math.random() * backgroundCount);
@@ -62,10 +70,6 @@ function minusSecs(secsID) {
     const secs = document.getElementById(secsID);
     if (secs.innerText==0) {
         secs.innerText = 59;
-       /* const mins = document.getElementById(minsID);
-        if (minsID.innerText!=0) {
-            minusMins(minsID, hoursID);
-        }*/
     } else {
         secs.innerText = parseInt(secs.innerText) - 1;
     }
@@ -89,14 +93,19 @@ function decreaseMinsTimer() {
 }
 
 function decreaseTime(type) {
-    const secs = document.getElementById("secs");
+    const secs = document.getElementById("secs"); 
     const mins = document.getElementById("mins");
     const hours = document.getElementById("hours");
-
+    const startTime = moment().format('LT');
+    const sessionsSoFar = parseInt(document.getElementById("revisionSessions").innerText.substr(10,1));
+    console.log(sessionsSoFar);
+    if (sessionsSoFar == 0 && type=="revision") {
+        updateStartTime(startTime,sessionsSoFar);
+    }
     currentHours = hours.innerText;
     currentMinutes = mins.innerText;
     currentSeconds = secs.innerText;
-
+    
     if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
         console.log('all 0');
     } else {
@@ -108,7 +117,7 @@ function decreaseTime(type) {
             if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
                 console.log("Done!")
                 clearInterval(repeat);
-                addToTotals();
+                addToTotals(type,sessionsSoFar);
             } else {
                 if (secs.innerText === "0") {
                     secs.innerText = "59"
@@ -119,4 +128,25 @@ function decreaseTime(type) {
             }
         }
     }
+}
+
+function addToTotals(type,sessionsSoFar) {
+    if (type==="revision") {
+        totalWorkTimeHours = totalWorkTimeHours + parseInt(currentHours);
+        totalWorkTimeMins = totalWorkTimeMins + parseInt(currentMinutes);
+        totalWorkTimeSecs = totalWorkTimeSecs + parseInt(currentSeconds);
+        document.getElementById("revisionValue").innerText = `${totalWorkTimeHours}h:${totalWorkTimeMins}m:${totalWorkTimeSecs}s`;
+        document.getElementById("revisionSessions").innerText = `Sessions: ${sessionsSoFar+1}`;
+    } else {
+        totalBreakTimeHours = totalBreakTimeHours + parseInt(currentHours);
+        totalBreakTimeMins = totalBreakTimeMins + parseInt(currentMinutes);
+        totalBreakTimeSecs = totalBreakTimeSecs + parseInt(currentSeconds);
+        document.getElementById("breakValue").innerText = `${totalBreakTimeHours}h:${totalBreakTimeMins}m:${totalBreakTimeSecs}s`;
+        const breakSessionsSoFar = parseInt(document.getElementById("revisionSessions").innerText.substr(10,1));
+        document.getElementById("breakSessions").innerText = `Sessions: ${breakSessionsSoFar+1}`;
+    }
+}
+
+function updateStartTime(startTime) {
+    document.getElementById("startValue").innerText = startTime;
 }
