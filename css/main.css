@@ -82,6 +82,8 @@ html {
     font-size: 3em;
     margin: auto;
     padding-bottom: 0.2em;
+    padding-left: 0.35em;
+    padding-right: 0.2em;
 }
 .timerButton {
     color: white !important;
