@@ -135,12 +135,28 @@ function addToTotals(type,sessionsSoFar) {
         totalWorkTimeHours = totalWorkTimeHours + parseInt(currentHours);
         totalWorkTimeMins = totalWorkTimeMins + parseInt(currentMinutes);
         totalWorkTimeSecs = totalWorkTimeSecs + parseInt(currentSeconds);
+        if (totalWorkTimeSecs>=60) {
+            totalWorkTimeSecs = totalWorkTimeSecs - 60;
+            totalWorkTimeMins = totalWorkTimeMins + 1;
+        }
+        if (totalWorkTimeMins>=60) {
+            totalWorkTimeMins = totalWorkTimeMins - 60;
+            totalWorkTimeHours = totalWorkTimeHours + 1;
+        }
         document.getElementById("revisionValue").innerText = `${totalWorkTimeHours}h:${totalWorkTimeMins}m:${totalWorkTimeSecs}s`;
         document.getElementById("revisionSessions").innerText = `Sessions: ${sessionsSoFar+1}`;
     } else {
         totalBreakTimeHours = totalBreakTimeHours + parseInt(currentHours);
         totalBreakTimeMins = totalBreakTimeMins + parseInt(currentMinutes);
         totalBreakTimeSecs = totalBreakTimeSecs + parseInt(currentSeconds);
+        if (totalBreakTimeSecs>=60) {
+            totalBreakTimeSecs = totalBreakTimeSecs - 60;
+            totalBreakTimeMins = totalBreakTimeMins + 1;
+        }
+        if (totalBreakTimeMins>=60) {
+            totalBreakTimeMins = totalBreakTimeMins - 60;
+            totalBreakTimeHours = totalBreakTimeHours + 1;
+        }
         document.getElementById("breakValue").innerText = `${totalBreakTimeHours}h:${totalBreakTimeMins}m:${totalBreakTimeSecs}s`;
         const breakSessionsSoFar = parseInt(document.getElementById("breakSessions").innerText.substr(10,1));
         document.getElementById("breakSessions").innerText = `Sessions: ${breakSessionsSoFar+1}`;
