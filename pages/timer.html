@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>TimerBuddy</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/timer.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <audio id="alarm">
+        <source src="../assets/short_message.mp3" type="audio/mpeg">
+    </audio>
+    <div class="gradient"></div>
+    <div class="alert" id="alert">
+        <span class="closebtn" id="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p id="alertMessage"></p>
+    </div>
+    <div class="navbar"> 
+        <div class="navbarItem"><a href="../index.html" class="navbarLink">Home</a></div>
+        <div class="navbarItem"><a href="./timer.html" class="navbarLink">TimerBuddy</a></div>
+        <div class="navbarItem"><a href="#" class="navbarLink">Login</a></div>
+    </div>
+    <div class="timer">
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addHours">
+                <a class="adjust" href="#" onclick='addHours("hours")'>+</a>
+            </p>
+            <div class="a_class_name">
+                <p class="timerItemValue" id="hours">0</p>
+                <div class="liltimerindicatorsorsomething">
+                    h
+                </div>
+            </div>
+            <p class="timerItemAdjust" id="minusHours">
+                <a class="adjust" href="#" onclick='minusHours("hours")'>-</a>
+            </p>
+        </div>
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addMins">
+                <a class="adjust" href="#" onclick='addMins("mins", "hours")'>+</a>
+            </p>
+            <div class="a_class_name">
+                <p class="timerItemValue" id="mins">0</p>
+                <div class="liltimerindicatorsorsomething">
+                    m
+                </div>
+            </div>
+            <p class="timerItemAdjust" id="minusMins">
+                <a class="adjust" href="#" onclick='minusMins("mins")'>-</a>
+            </p>
+        </div>
+        <div class="timerItem">
+            <p class="timerItemAdjust" id="addSecs">
+                <a class="adjust" href="#" onclick='addSecs("secs","mins","hours")'>+</a>
+            </p>
+            <div class="a_class_name">
+                <p class="timerItemValue" id="secs">0</p>
+                <div class="liltimerindicatorsorsomething">
+                    s
+                </div>
+            </div>
+            <p class="timerItemAdjust" id="minusSecs">
+                <a class="adjust" href="#" onclick='minusSecs("secs")'>-</a>
+            </p>
+        </div>
+
+        <div class="timerButtons">
+            <div class="timerButton" onclick='decreaseTime("revision")'>Start Revision</div>
+            <div class="timerButton" onclick='decreaseTime("break")'>Start Break</div>
+        </div>
+    </div>
+    <div class="totals">
+        <div class="totalsItem" id="startTime">
+            <div class="totalsTitle" id="startTitle">Today you started</br>work at:</div>
+            <div class="totalsValue" id="startValue">You haven't started yet!</div>
+        </div>
+        <div class="totalsItem" id="revisionTotal">
+            <div class="totalsTitle" id="revisionTitle">Total Revision Time:</div>
+            <div class="totalsValue" id="revisionValue">0h:0m:0s</div>
+            <div class="totalsValue" id="revisionSessions">Sessions: 0</div>
+        </div>
+        <div class="totalsItem" id="breakTotal">
+            <div class="totalsTitle" id="breakTitle">Total Break Time:</div>
+            <div class="totalsValue" id="breakValue">0h:0m:0s</div>
+            <div class="totalsValue" id="breakSessions">Sessions: 0</div>
+        </div>
+    </div>
+    <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>
+</body>
+
+<script>
+    window.addEventListener('load', function (event) {
+        console.log('Page loaded');
+        displayBackgroundTimer();
+        displayHappyPhrase("happyPhrase");
+    });
+</script>
+</html>

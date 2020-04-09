@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UniBuddy</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/home.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="gradient"></div>
+    <div class="navbar">
+        <div class="navbarItem"><a href="./index.html" class="navbarLink">Home</a></div>
+        <div class="navbarItem"><a href="./pages/timer.html" class="navbarLink">TimerBuddy</a></div>
+        <div class="navbarItem"><a href="#" class="navbarLink">Login</a></div>
+    </div>
+    <div class="countdown">
+        <div class="countdownItem">
+            <p class="countdownItemLabel">DAYS</p>
+            <p class="countdownItemValue" id="days">0</p>
+        </div>
+        <div class="countdownItem">
+            <p class="countdownItemLabel">HOURS</p>
+            <p class="countdownItemValue" id="hours">0</p>
+        </div>
+        <div class="countdownItem">
+            <p class="countdownItemLabel">MINUTES</p>
+            <p class="countdownItemValue" id="mins">0</p>
+        </div>
+        <div class="countdownItem">
+            <p class="countdownItemLabel">SECONDS</p>
+            <p class="countdownItemValue" id="secs">0</p>
+        </div>
+    </div>
+    <div class="happyMessage" id="happyPhrase">This is a placeholder message</div>
+</body>
+
+<script>
+    window.addEventListener('load', function (event) {
+        console.log('Page loaded');
+        init("happyPhrase", moment);
+    });
+</script>
+
+</html>
