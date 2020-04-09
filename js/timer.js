@@ -10,8 +10,15 @@ let currentHours;
 let currentMinutes;
 let currentSeconds;
 
+let isRunning = false;
+
 let startHour;
 let startMin;
+
+function playAlarm() {
+    const alarm = document.getElementById("alarm");
+    alarm.play();
+}
 
 function displayBackgroundTimer() {
     const randInt = Math.floor(Math.random() * backgroundCount);
@@ -92,11 +99,11 @@ function decreaseMinsTimer() {
     }
 }
 
-function hideAlert() {
-
-}
-
 function decreaseTime(type) {
+    if (isRunning) {
+        return;
+    }
+
     const secs = document.getElementById("secs"); 
     const mins = document.getElementById("mins");
     const hours = document.getElementById("hours");
@@ -112,6 +119,7 @@ function decreaseTime(type) {
     currentHours = hours.innerText;
     currentMinutes = mins.innerText;
     currentSeconds = secs.innerText;
+    isRunning = true;
     
     if (secs.innerText === "0" && mins.innerText === "0" && hours.innerText === "0") {
         console.log('all 0');
@@ -133,6 +141,8 @@ function decreaseTime(type) {
                     closebtn.style.display = "unset";
                 }
                 clearInterval(repeat);
+                playAlarm();
+                isRunning = false;
                 addToTotals(type,sessionsSoFar);
             } else {
                 if (secs.innerText === "0") {

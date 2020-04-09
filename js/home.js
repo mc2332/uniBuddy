@@ -2,10 +2,21 @@ const happyPhrases = [
     "Please try harder",
     "Everyone is relying on you",
     "This is the most important time of your life",
-    "Do a flip"
+    "Keep working! You're nearly there",
+    "One more session gets you closer to the finish line",
+    "Smile to relieve stress! :)",
+    "There is no substitute for hard work",
+    "Try meditation!",
+    "If you're struggling, take a break",
+    "You will be extremely powerful when this is all over",
+    "Get rich or die trying",
+    "If something is important enough, even if the odds are against you, you should still do it",
+    "Every day you wake up is a good day",
+    "Failure is an option here. If things are not failing, you are not innovating enough",
+    "The first step is to establish that something is possible; then probability will occur"
 ];
 
-const backgroundCount = 4;
+const backgroundCount = 10;
 
 function pickRandom(array) {
     const arrayLength = array.length;
